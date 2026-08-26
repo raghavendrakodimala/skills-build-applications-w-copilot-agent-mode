@@ -4,6 +4,9 @@ import apiRouter from './routes/api.js';
 
 const app = express();
 const port = Number(process.env.PORT) || 8000;
+const apiBaseUrl = process.env.CODESPACE_NAME
+  ? `https://${process.env.CODESPACE_NAME}-8000.app.github.dev`
+  : 'http://localhost:8000';
 
 app.use(express.json());
 app.use((_request, response, next) => {
@@ -21,4 +24,5 @@ app.use('/api', apiRouter);
 
 app.listen(port, () => {
   console.log(`OctoFit API listening on port ${port}`);
+  console.log(`API base URL: ${apiBaseUrl}`);
 });
