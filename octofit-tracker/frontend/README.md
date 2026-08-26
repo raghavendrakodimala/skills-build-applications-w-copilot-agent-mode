@@ -1,3 +1,12 @@
+# OctoFit Tracker frontend
+
+The Vite app reads `VITE_CODESPACE_NAME` from the environment to reach the API. Define it in `octofit-tracker/frontend/.env.local` when running in Codespaces:
+
+```text
+VITE_CODESPACE_NAME=your-codespace-name
+```
+
+When it is unset, the app safely uses `http://localhost:8000/api` for local development.
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
